@@ -15,7 +15,8 @@ case "${1:-}" in
     export GGML_METAL_BF16_DISABLE=1
     # Any llama.cpp-compatible model works; override with LLM_HF=org/repo[:quant].
     # -hf downloads the model + its vision projector into the Hugging Face cache on first run.
-    exec llama-server -hf "${LLM_HF:-ggml-org/Qwen2.5-VL-3B-Instruct-GGUF}" \
+    exec "$(dirname "$0")/../tools/llama.cpp/build/bin/llama-server" \
+      -hf "${LLM_HF:-ggml-org/Qwen2.5-VL-3B-Instruct-GGUF}" \
       --port 8080 --ctx-size 8192 --n-gpu-layers 99 --jinja
     ;;
   stt)
