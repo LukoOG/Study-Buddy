@@ -1,0 +1,17 @@
+{
+  "llm": {
+    "provider": "openai-compatible",
+    "url": "http://127.0.0.1:8080",
+    "model": "qwen2.5-vl-3b",
+    "vision": true
+  },
+  "stt": {
+    "provider": "whisper-server",
+    "url": "http://127.0.0.1:8081",
+    "prompt": "Hey Buddy. WAEC, JAMB, IUPAC, alkane, alkene, alkyne, refraction, Snell's law."
+  },
+  "tts": {
+    "provider": "sherpa-onnx",
+    "voices": { "en": "models/tts/mms-eng", "pcm": "models/tts/mms-pcm" }
+  }
+}

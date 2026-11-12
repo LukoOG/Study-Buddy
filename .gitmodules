@@ -1,0 +1,3 @@
+[submodule "study-buddy/tools/llama.cpp"]
+	path = study-buddy/tools/llama.cpp
+	url = https://github.com/ggml-org/llama.cpp

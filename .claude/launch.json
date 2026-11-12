@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "study-buddy",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--prefix", "study-buddy"],
+      "port": 3000
+    }
+  ]
+}

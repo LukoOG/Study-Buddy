@@ -1,0 +1,19 @@
+{
+  "name": "study-buddy",
+  "version": "1.0.0",
+  "description": "Phase 0 prototype: voice + marker study buddy for WAEC/JAMB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@ricky0123/vad-web": "^0.0.31",
+    "pdfjs-dist": "^6.5.438",
+    "sherpa-onnx-node": "1.13.8"
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Buddy</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="toolbar">
+    <strong class="brand">Study Buddy</strong>
+    <label class="btn">Open PDF<input type="file" id="pdfInput" accept="application/pdf" hidden></label>
+    <label class="btn">Open video<input type="file" id="videoInput" accept="video/*" hidden></label>
+    <button class="btn" id="sampleBtn">Sample PDF</button>
+    <span id="pager" class="pager" hidden>
+      <button class="btn" id="prevBtn" aria-label="Previous page">‹</button>
+      <span id="pageLabel"></span>
+      <button class="btn" id="nextBtn" aria-label="Next page">›</button>
+    </span>
+    <span class="spacer"></span>
+    <button class="btn toggle" id="penBtn" aria-pressed="true">Marker</button>
+    <button class="btn" id="clearBtn">Clear</button>
+    <span id="status" class="status"></span>
+  </header>
+
+  <main id="stageWrap">
+    <p id="empty" class="empty">Open a PDF or a video, press <b>Start listening</b>, then point or circle and say
+      <b>“Hey Buddy, …”</b></p>
+    <div id="stage" class="stage" hidden>
+      <canvas id="page"></canvas>
+      <video id="video" controls hidden></video>
+      <canvas id="studentInk" class="overlay"></canvas>
+      <canvas id="buddyInk" class="overlay passive"></canvas>
+    </div>
+  </main>
+
+  <footer class="dock">
+    <div id="caption" class="caption" hidden></div>
+    <div class="voicebar">
+      <button id="listenBtn" class="listen" data-phase="off">
+        <span class="dot"></span><span id="listenLabel">Start listening</span>
+      </button>
+      <span id="heard" class="heard"></span>
+    </div>
+    <!-- Typing is a testing aid only; press "/" to show it. -->
+    <form id="askForm" class="ask" hidden>
+      <input id="questionInput" autocomplete="off" placeholder="Type a question (testing)…">
+      <button type="submit" class="btn primary">Ask</button>
+    </form>
+  </footer>
+
+  <script src="/vendor/ort/ort.wasm.min.js"></script>
+  <script src="/vendor/vad/bundle.min.js"></script>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
